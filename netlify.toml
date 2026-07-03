@@ -1,8 +1,9 @@
 [build]
   functions = "netlify/functions"
+  command = "curl -sL https://cad-ai-blueprint.netlify.app/index.html -o index.html && curl -sL https://cad-ai-blueprint.netlify.app/members.html -o members.html && curl -sL https://cad-ai-blueprint.netlify.app/terms.html -o terms.html && echo 'HTML files downloaded'"
+  publish = "."
 
-  [[redirects]]
-    from = "/api/*"
-      to = "/.netlify/functions/:splat"
-        status = 200
-        
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
